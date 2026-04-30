@@ -1,0 +1,1050 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>{{ person.name }} — Career Showcase</title>
+  <style>
+    :root {
+      --page: #f5f7fa;
+      --panel: rgba(255, 255, 255, 0.95);
+      --panel-strong: #ffffff;
+      --line: rgba(0, 0, 0, 0.09);
+      --line-strong: rgba(0, 0, 0, 0.18);
+      --text: #111827;
+      --muted: #6b7280;
+      --accent: #1d6fa4;
+      --accent-strong: #125882;
+      --accent-soft: rgba(29, 111, 164, 0.10);
+      --shadow: 0 4px 24px rgba(0, 0, 0, 0.07);
+      --radius-lg: 24px;
+      --radius-md: 16px;
+      --radius-sm: 12px;
+      --mono: "Consolas", "SFMono-Regular", "Courier New", monospace;
+      --sans: "Segoe UI", "Aptos", "Trebuchet MS", sans-serif;
+    }
+
+    * { box-sizing: border-box; }
+
+    body {
+      margin: 0;
+      font-family: var(--sans);
+      color: var(--text);
+      background: linear-gradient(180deg, #f0f4f8 0%, var(--page) 100%);
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    .shell {
+      width: calc(100vw - 48px);
+      max-width: none;
+      height: calc(100vh - 48px);
+      margin: 24px auto;
+      padding: 24px;
+      border: 1px solid var(--line);
+      border-radius: 32px;
+      background: #ffffff;
+      box-shadow: var(--shadow);
+      display: flex;
+      flex-direction: column;
+      overflow: hidden;
+    }
+
+    /* ── Hero ───────────────────────────────────────────────── */
+    .hero {
+      display: grid;
+      gap: 10px;
+      grid-template-columns: auto minmax(0, 1fr) minmax(220px, auto);
+      align-items: center;
+      padding: 6px 4px 12px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .hero-avatar {
+      width: 64px;
+      height: 64px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 2px solid var(--line-strong);
+      flex-shrink: 0;
+    }
+
+    .hero-identity {
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      gap: 2px;
+    }
+
+    h1 {
+      margin: 0;
+      font-family: var(--sans);
+      font-size: clamp(1.4rem, 2.2vw, 2rem);
+      line-height: 1;
+      letter-spacing: -0.03em;
+    }
+
+    .hero-subtitle {
+      margin: 0;
+      color: var(--muted);
+      font-size: 0.95rem;
+    }
+
+    .hero-contact {
+      display: flex;
+      flex-direction: column;
+      align-items: flex-end;
+      gap: 4px;
+      font-size: 0.82rem;
+      color: var(--muted);
+    }
+
+    .hero-contact a {
+      color: var(--accent);
+      text-decoration: none;
+    }
+
+    .hero-contact a:hover { text-decoration: underline; }
+
+    /* ── Tab strip ──────────────────────────────────────────── */
+    .workspace {
+      margin-top: 12px;
+      display: flex;
+      flex-direction: column;
+      gap: 10px;
+      flex: 1;
+      min-height: 0;
+    }
+
+    .tab-bar {
+      display: flex;
+      gap: 8px;
+      flex-wrap: wrap;
+      padding: 4px 0;
+    }
+
+    .tab-button {
+      appearance: none;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,0.72);
+      color: var(--text);
+      border-radius: 999px;
+      padding: 7px 18px;
+      font-family: var(--sans);
+      font-weight: 700;
+      font-size: 0.85rem;
+      cursor: pointer;
+      transition: transform 160ms ease, background 160ms ease, border-color 160ms ease;
+    }
+
+    .tab-button:hover {
+      transform: translateY(-1px);
+      border-color: var(--line-strong);
+    }
+
+    .tab-button.is-active {
+      background: linear-gradient(135deg, var(--accent), var(--accent-strong));
+      color: white;
+      border-color: transparent;
+      box-shadow: 0 4px 14px rgba(29, 111, 164, 0.20);
+    }
+
+    /* ── Tab panels ─────────────────────────────────────────── */
+    .tab-content {
+      flex: 1;
+      min-height: 0;
+      overflow-y: auto;
+    }
+
+    .tab-panel { display: none; }
+    .tab-panel.is-active { display: block; }
+
+    /* ── Layout helpers ─────────────────────────────────────── */
+    .two-col {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .three-col {
+      display: grid;
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 18px;
+    }
+
+    .card {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+    }
+
+    .card-title {
+      margin: 0 0 12px;
+      font-size: 1rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      color: var(--accent-strong);
+    }
+
+    .card p {
+      margin: 0 0 8px;
+      line-height: 1.65;
+      font-size: 0.93rem;
+    }
+
+    .card p:last-child { margin-bottom: 0; }
+
+    /* ── Tab 1: Profile ─────────────────────────────────────── */
+    #tab-profile {
+      padding: 4px 0 16px;
+    }
+
+    .profile-grid {
+      display: grid;
+      grid-template-columns: minmax(280px, 340px) minmax(0, 1fr);
+      gap: 18px;
+    }
+
+    .profile-left {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .disclaimer-text {
+      font-size: 0.8rem;
+      line-height: 1.6;
+      color: var(--muted);
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    .contact-list {
+      list-style: none;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 0.85rem;
+    }
+
+    .contact-list li {
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      color: var(--muted);
+    }
+
+    .contact-list a { color: var(--accent); text-decoration: none; }
+    .contact-list a:hover { text-decoration: underline; }
+
+    .contact-icon {
+      width: 16px;
+      text-align: center;
+      color: var(--accent);
+      flex-shrink: 0;
+    }
+
+    .edu-item {
+      margin-bottom: 10px;
+    }
+
+    .edu-item:last-child { margin-bottom: 0; }
+
+    .edu-degree {
+      font-weight: 700;
+      font-size: 0.9rem;
+    }
+
+    .edu-school {
+      font-size: 0.85rem;
+      color: var(--muted);
+    }
+
+    .edu-detail {
+      font-size: 0.8rem;
+      color: var(--muted);
+      margin-top: 2px;
+    }
+
+    .profile-right {
+      display: flex;
+      flex-direction: column;
+      gap: 14px;
+    }
+
+    .summary-text {
+      font-size: 0.96rem;
+      line-height: 1.75;
+      margin: 0;
+    }
+
+    .cover-letter-text {
+      font-size: 0.92rem;
+      line-height: 1.75;
+      white-space: pre-line;
+      margin: 0;
+    }
+
+    /* ── Tab 2: Work Experience ─────────────────────────────── */
+    #tab-work {
+      padding: 4px 0 16px;
+    }
+
+    .work-section-title {
+      margin: 0 0 14px;
+      font-size: 1.1rem;
+      font-weight: 800;
+      color: var(--accent-strong);
+      letter-spacing: 0.02em;
+      border-bottom: 1px solid var(--line);
+      padding-bottom: 6px;
+    }
+
+    /* Skills */
+    .skill-group { margin-bottom: 18px; }
+
+    .skill-group-label {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.08em;
+      color: var(--muted);
+      margin: 0 0 8px;
+    }
+
+    .skill-row {
+      display: flex;
+      align-items: center;
+      gap: 10px;
+      margin-bottom: 7px;
+    }
+
+    .skill-name {
+      min-width: 160px;
+      font-size: 0.88rem;
+      font-weight: 600;
+    }
+
+    .skill-bar-wrap {
+      flex: 1;
+      height: 6px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      overflow: hidden;
+    }
+
+    .skill-bar {
+      height: 100%;
+      border-radius: 999px;
+      background: linear-gradient(90deg, var(--accent), var(--accent-strong));
+    }
+
+    .skill-level {
+      font-size: 0.75rem;
+      font-weight: 700;
+      color: var(--accent);
+      min-width: 80px;
+      text-align: right;
+    }
+
+    /* Resume timeline */
+    .role-block {
+      margin-bottom: 24px;
+      padding-bottom: 24px;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .role-block:last-child {
+      border-bottom: none;
+      margin-bottom: 0;
+      padding-bottom: 0;
+    }
+
+    .role-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 12px;
+      margin-bottom: 4px;
+    }
+
+    .role-title {
+      font-size: 1rem;
+      font-weight: 800;
+      margin: 0;
+    }
+
+    .role-company {
+      font-size: 0.9rem;
+      color: var(--accent);
+      font-weight: 600;
+    }
+
+    .role-period {
+      font-size: 0.82rem;
+      color: var(--muted);
+      white-space: nowrap;
+      font-family: var(--mono);
+    }
+
+    .role-bullets {
+      margin: 8px 0 0 0;
+      padding-left: 18px;
+    }
+
+    .role-bullets li {
+      font-size: 0.9rem;
+      line-height: 1.6;
+      margin-bottom: 4px;
+      color: var(--text);
+    }
+
+    /* Work History Carousel */
+    .carousel-wrap {
+      position: relative;
+    }
+
+    .carousel-track {
+      position: relative;
+      overflow: hidden;
+    }
+
+    .carousel-slide {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      visibility: hidden;
+      pointer-events: none;
+    }
+
+    .carousel-slide.is-active {
+      position: relative;
+      visibility: visible;
+      pointer-events: auto;
+    }
+
+    .carousel-controls {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      margin-top: 16px;
+      padding-top: 12px;
+      border-top: 1px solid var(--line);
+    }
+
+    .carousel-arrow {
+      appearance: none;
+      background: rgba(255,255,255,0.72);
+      border: 1px solid var(--line);
+      border-radius: 999px;
+      width: 32px;
+      height: 32px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      cursor: pointer;
+      font-size: 1rem;
+      color: var(--accent);
+      transition: background 160ms, border-color 160ms, transform 160ms;
+      flex-shrink: 0;
+    }
+
+    .carousel-arrow:hover {
+      background: var(--accent-soft);
+      border-color: var(--accent);
+      transform: scale(1.08);
+    }
+
+    .carousel-arrow:disabled {
+      opacity: 0.3;
+      cursor: default;
+      transform: none;
+    }
+
+    .carousel-dots {
+      display: flex;
+      gap: 6px;
+      align-items: center;
+    }
+
+    .carousel-dot {
+      width: 7px;
+      height: 7px;
+      border-radius: 50%;
+      background: var(--line-strong);
+      cursor: pointer;
+      transition: background 160ms, transform 160ms;
+    }
+
+    .carousel-dot.is-active {
+      background: var(--accent);
+      transform: scale(1.3);
+    }
+
+    .carousel-counter {
+      font-size: 0.78rem;
+      color: var(--muted);
+      font-family: var(--mono);
+    }
+
+    /* Projects */
+    .project-card {
+      padding: 20px 22px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+      margin-bottom: 14px;
+    }
+
+    .project-card:last-child { margin-bottom: 0; }
+
+    .project-title {
+      margin: 0 0 10px;
+      font-size: 1rem;
+      font-weight: 800;
+    }
+
+    .project-meta {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+      margin-bottom: 12px;
+    }
+
+    .badge {
+      display: inline-flex;
+      align-items: center;
+      padding: 4px 10px;
+      border-radius: 999px;
+      background: var(--accent-soft);
+      color: var(--accent-strong);
+      font-size: 0.76rem;
+      font-weight: 700;
+      white-space: nowrap;
+    }
+
+    .project-row {
+      display: grid;
+      grid-template-columns: 90px minmax(0, 1fr);
+      gap: 6px 12px;
+      font-size: 0.88rem;
+      line-height: 1.55;
+      margin-bottom: 4px;
+    }
+
+    .project-row-label {
+      font-weight: 700;
+      color: var(--muted);
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.06em;
+      padding-top: 2px;
+    }
+
+    /* ── Tab 3: Testimonials ────────────────────────────────── */
+    #tab-testimonials {
+      padding: 4px 0 16px;
+    }
+
+    .testimonial-group-title {
+      font-size: 0.75rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin: 0 0 12px;
+    }
+
+    .testimonial-card {
+      padding: 18px 20px;
+      border: 1px solid var(--line);
+      border-radius: var(--radius-md);
+      background: var(--panel);
+      margin-bottom: 12px;
+      border-left: 3px solid var(--accent);
+    }
+
+    .testimonial-card:last-child { margin-bottom: 0; }
+
+    .testimonial-quote {
+      font-size: 0.95rem;
+      line-height: 1.7;
+      font-style: italic;
+      margin: 0 0 10px;
+      color: var(--text);
+    }
+
+    .testimonial-quote::before { content: "\201C"; }
+    .testimonial-quote::after  { content: "\201D"; }
+
+    .testimonial-attribution {
+      font-size: 0.82rem;
+      font-weight: 700;
+      color: var(--accent-strong);
+    }
+
+    .testimonial-role {
+      font-size: 0.8rem;
+      color: var(--muted);
+    }
+
+    .testimonial-group-section {
+      margin-bottom: 28px;
+    }
+
+    .testimonial-group-section:last-child { margin-bottom: 0; }
+
+    /* ── Tab 4: About Me ────────────────────────────────────── */
+    #tab-about {
+      padding: 4px 0 16px;
+    }
+
+    .book-item {
+      display: flex;
+      gap: 10px;
+      align-items: flex-start;
+      padding: 10px 0;
+      border-bottom: 1px solid var(--line);
+      font-size: 0.88rem;
+    }
+
+    .book-item:last-child { border-bottom: none; }
+
+    .book-dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 50%;
+      background: var(--accent);
+      margin-top: 5px;
+      flex-shrink: 0;
+    }
+
+    .book-title {
+      font-weight: 700;
+      margin-bottom: 2px;
+    }
+
+    .book-insight {
+      color: var(--muted);
+      line-height: 1.5;
+    }
+
+    .hobby-chip {
+      display: inline-flex;
+      align-items: center;
+      padding: 6px 14px;
+      border-radius: 999px;
+      background: rgba(255,255,255,0.75);
+      border: 1px solid var(--line);
+      color: var(--text);
+      font-size: 0.85rem;
+      margin: 4px;
+    }
+
+    .personality-subheader {
+      font-size: 0.7rem;
+      font-weight: 700;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      color: var(--muted);
+      margin: 14px 0 6px;
+    }
+
+    .personality-subheader:first-child { margin-top: 0; }
+
+    .personality-row {
+      display: grid;
+      grid-template-columns: 160px minmax(0, 1fr);
+      gap: 8px 14px;
+      font-size: 0.88rem;
+      padding: 8px 0;
+      border-bottom: 1px solid var(--line);
+      align-items: start;
+    }
+
+    .personality-row:last-child { border-bottom: none; }
+
+    .personality-label {
+      font-weight: 700;
+      color: var(--accent-strong);
+      font-size: 0.82rem;
+      text-transform: uppercase;
+      letter-spacing: 0.05em;
+      padding-top: 2px;
+    }
+
+    .personality-test-badge {
+      display: inline-block;
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--accent);
+      background: var(--accent-soft);
+      border-radius: 999px;
+      padding: 1px 7px;
+      margin-left: 6px;
+      vertical-align: middle;
+      letter-spacing: 0.04em;
+    }
+
+    /* ── Scrollbar ──────────────────────────────────────────── */
+    .tab-content::-webkit-scrollbar { width: 6px; }
+    .tab-content::-webkit-scrollbar-track { background: transparent; }
+    .tab-content::-webkit-scrollbar-thumb { background: var(--line-strong); border-radius: 3px; }
+
+    /* ── Responsive ─────────────────────────────────────────── */
+    @media (max-width: 1080px) {
+      .profile-grid, .two-col, .three-col { grid-template-columns: 1fr; }
+    }
+
+    @media (max-width: 700px) {
+      .shell {
+        width: calc(100vw - 16px);
+        margin: 8px auto;
+        padding: 14px;
+        border-radius: 22px;
+      }
+      .hero { grid-template-columns: auto 1fr; }
+      .hero-contact { display: none; }
+    }
+  </style>
+</head>
+<body>
+  <div class="shell">
+
+    <!-- ── Hero ─────────────────────────────────────────────── -->
+    <section class="hero">
+      <img class="hero-avatar" src="{{ person.avatar_src }}" alt="{{ person.name }}" />
+      <div class="hero-identity">
+        <h1>{{ person.name }}</h1>
+        <p class="hero-subtitle">{{ person.title }}</p>
+      </div>
+      <div class="hero-contact">
+        <span>{{ person.location }}</span>
+        <a href="mailto:{{ person.email }}">{{ person.email }}</a>
+        <a href="tel:{{ person.phone }}">{{ person.phone }}</a>
+        <a href="{{ person.linkedin }}" target="_blank" rel="noopener">LinkedIn</a>
+      </div>
+    </section>
+
+    <!-- ── Tab bar ───────────────────────────────────────────── -->
+    <section class="workspace">
+      <div class="tab-bar" id="tabBar">
+        {% for tab in tabs %}
+        <button class="tab-button{% if loop.first %} is-active{% endif %}"
+                data-tab="{{ tab.id }}">{{ tab.label }}</button>
+        {% endfor %}
+      </div>
+
+      <div class="tab-content" id="tabContent">
+
+        <!-- ══════════════════════════════════════════════════════
+             TAB 1 — PROFILE
+        ═══════════════════════════════════════════════════════ -->
+        <div class="tab-panel is-active" id="tab-profile">
+          <div class="profile-grid">
+
+            <!-- Left column -->
+            <div class="profile-left">
+
+              <div class="card">
+                <div class="card-title">Contact</div>
+                <ul class="contact-list">
+                  <li><span class="contact-icon">&#9993;</span><a href="mailto:{{ person.email }}">{{ person.email }}</a></li>
+                  <li><span class="contact-icon">&#9742;</span>{{ person.phone }}</li>
+                  <li><span class="contact-icon">&#128205;</span>{{ person.location }}</li>
+                  <li><span class="contact-icon">&#128279;</span><a href="{{ person.linkedin }}" target="_blank" rel="noopener">LinkedIn Profile</a></li>
+                </ul>
+              </div>
+
+              <div class="card">
+                <div class="card-title">Education</div>
+                {% for edu in education %}
+                <div class="edu-item">
+                  <div class="edu-degree">{{ edu.degree }}</div>
+                  <div class="edu-school">{{ edu.school }}</div>
+                  <div class="edu-detail">{{ edu.detail }}</div>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="card">
+                <div class="card-title">Disclaimer</div>
+                <p class="disclaimer-text">{{ profile.disclaimer }}</p>
+              </div>
+
+            </div>
+
+            <!-- Right column -->
+            <div class="profile-right">
+
+              <div class="card">
+                <div class="card-title">Professional Summary</div>
+                <p class="summary-text">{{ profile.summary }}</p>
+              </div>
+
+              <div class="card">
+                <div class="card-title">Cover Letter</div>
+                <p class="cover-letter-text">{{ profile.cover_letter }}</p>
+              </div>
+
+            </div>
+          </div>
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+             TAB 2 — WORK EXPERIENCE & PROJECTS
+        ═══════════════════════════════════════════════════════ -->
+        <div class="tab-panel" id="tab-work">
+
+          <!-- Section A: Work History Carousel -->
+          <div class="card" style="margin-bottom:18px;">
+            <h2 class="work-section-title">Work History</h2>
+            <div class="carousel-wrap" id="workCarousel">
+              <div class="carousel-track">
+                {% for role in roles %}
+                <div class="carousel-slide{% if loop.first %} is-active{% endif %}" data-index="{{ loop.index0 }}">
+                  <div class="role-header">
+                    <div>
+                      <p class="role-title">{{ role.title }}</p>
+                      <span class="role-company">{{ role.company }}</span>
+                    </div>
+                    <span class="role-period">{{ role.period }}</span>
+                  </div>
+                  <ul class="role-bullets">
+                    {% for bullet in role.bullets %}
+                    <li>{{ bullet }}</li>
+                    {% endfor %}
+                  </ul>
+                </div>
+                {% endfor %}
+              </div>
+              <div class="carousel-controls">
+                <button class="carousel-arrow" id="workPrev" aria-label="Previous role">&#8592;</button>
+                <div class="carousel-dots" id="workDots">
+                  {% for role in roles %}
+                  <div class="carousel-dot{% if loop.first %} is-active{% endif %}" data-index="{{ loop.index0 }}"></div>
+                  {% endfor %}
+                </div>
+                <span class="carousel-counter" id="workCounter">1 / {{ roles|length }}</span>
+                <button class="carousel-arrow" id="workNext" aria-label="Next role">&#8594;</button>
+              </div>
+            </div>
+          </div>
+
+          <!-- Section B: Project Highlights -->
+          <div style="margin-bottom:18px;">
+            <h2 class="work-section-title" style="padding:0 0 6px; border-bottom:1px solid var(--line); margin-bottom:14px;">
+              Project Highlights
+            </h2>
+            {% for project in projects %}
+            <div class="project-card">
+              <p class="project-title">{{ project.title }}</p>
+              <div class="project-meta">
+                {% for tag in project.tags %}
+                <span class="badge">{{ tag }}</span>
+                {% endfor %}
+              </div>
+              <div class="project-row">
+                <span class="project-row-label">Problem</span>
+                <span>{{ project.problem }}</span>
+              </div>
+              <div class="project-row">
+                <span class="project-row-label">Solution</span>
+                <span>{{ project.solution }}</span>
+              </div>
+              <div class="project-row">
+                <span class="project-row-label">Tech</span>
+                <span>{{ project.tech }}</span>
+              </div>
+              <div class="project-row">
+                <span class="project-row-label">Impact</span>
+                <span>{{ project.impact }}</span>
+              </div>
+            </div>
+            {% endfor %}
+          </div>
+
+          <!-- Section C: Skills -->
+          <div class="card" style="margin-bottom:18px;">
+            <h2 class="work-section-title">Skills &amp; Proficiency</h2>
+            {% for group in skills %}
+            <div class="skill-group">
+              <div class="skill-group-label">{{ group.category }}</div>
+              {% for skill in group.skills %}
+              <div class="skill-row">
+                <span class="skill-name">{{ skill.name }}</span>
+                <div class="skill-bar-wrap">
+                  <div class="skill-bar" style="width:{{ skill.pct }}%"></div>
+                </div>
+                <span class="skill-level">{{ skill.level }}</span>
+              </div>
+              {% endfor %}
+            </div>
+            {% endfor %}
+          </div>
+
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+             TAB 3 — TESTIMONIALS
+        ═══════════════════════════════════════════════════════ -->
+        <div class="tab-panel" id="tab-testimonials">
+          {% for group in testimonials %}
+          <div class="testimonial-group-section">
+            <div class="testimonial-group-title">{{ group.group }}</div>
+            {% for t in group.quotes %}
+            <div class="testimonial-card">
+              <p class="testimonial-quote">{{ t.quote }}</p>
+              <div class="testimonial-attribution">{{ t.name }}</div>
+              <div class="testimonial-role">{{ t.role }}</div>
+            </div>
+            {% endfor %}
+          </div>
+          {% endfor %}
+        </div>
+
+        <!-- ══════════════════════════════════════════════════════
+             TAB 4 — ABOUT ME
+        ═══════════════════════════════════════════════════════ -->
+        <div class="tab-panel" id="tab-about">
+          <div class="two-col">
+
+            <!-- Left -->
+            <div>
+              <div class="card" style="margin-bottom:18px;">
+                <div class="card-title">Personal Interests &amp; Hobbies</div>
+                <div>
+                  {% for hobby in about.hobbies %}
+                  <span class="hobby-chip">{{ hobby }}</span>
+                  {% endfor %}
+                </div>
+              </div>
+
+              <div class="card" style="margin-bottom:18px;">
+                <div class="card-title">Work Style</div>
+                {% for trait in about.personality if trait.group == 'style' %}
+                <div class="personality-row">
+                  <span class="personality-label">{{ trait.label }}</span>
+                  <span>{{ trait.value }}</span>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="card" style="margin-bottom:18px;">
+                <div class="card-title">Personality Assessments</div>
+                {% for trait in about.personality if trait.group == 'test' %}
+                <div class="personality-row">
+                  <span class="personality-label">{{ trait.label }}</span>
+                  <span>{{ trait.value }}</span>
+                </div>
+                {% endfor %}
+              </div>
+
+              <div class="card">
+                <div class="card-title">Family</div>
+                {% for trait in about.personality if trait.group == 'family' %}
+                  {% if trait.sub_items %}
+                    {% for item in trait.sub_items %}
+                    <div class="personality-row">
+                      <span class="personality-label">{{ item.label }}</span>
+                      <span>{{ item.value }}</span>
+                    </div>
+                    {% endfor %}
+                  {% else %}
+                  <div class="personality-row">
+                    <span class="personality-label">{{ trait.label }}</span>
+                    <span>{{ trait.value }}</span>
+                  </div>
+                  {% endif %}
+                {% endfor %}
+              </div>
+            </div>
+
+            <!-- Right -->
+            <div class="card">
+              <div class="card-title">Influential Books</div>
+              {% for book in about.books %}
+              <div class="book-item">
+                <div class="book-dot"></div>
+                <div>
+                  <div class="book-title">{{ book.title }}</div>
+                  <div class="book-insight">{{ book.insight }}</div>
+                </div>
+              </div>
+              {% endfor %}
+            </div>
+
+          </div>
+        </div>
+
+      </div><!-- /tab-content -->
+    </section>
+
+  </div><!-- /shell -->
+
+  <script>
+    const tabBar     = document.getElementById('tabBar');
+    const tabContent = document.getElementById('tabContent');
+
+    tabBar.querySelectorAll('.tab-button').forEach(btn => {
+      btn.addEventListener('click', () => {
+        tabBar.querySelectorAll('.tab-button').forEach(b => b.classList.remove('is-active'));
+        tabContent.querySelectorAll('.tab-panel').forEach(p => p.classList.remove('is-active'));
+        btn.classList.add('is-active');
+        const panel = document.getElementById('tab-' + btn.dataset.tab);
+        if (panel) panel.classList.add('is-active');
+      });
+    });
+
+    // Work History Carousel
+    (function () {
+      const track   = document.querySelector('#workCarousel .carousel-track');
+      const slides  = Array.from(document.querySelectorAll('#workCarousel .carousel-slide'));
+      const dots    = Array.from(document.querySelectorAll('#workDots .carousel-dot'));
+      const counter = document.getElementById('workCounter');
+      const prev    = document.getElementById('workPrev');
+      const next    = document.getElementById('workNext');
+      let current   = 0;
+
+      // Measure tallest slide and lock track height so panel never resizes
+      function lockHeight() {
+        slides.forEach(s => {
+          s.style.position = 'relative';
+          s.style.visibility = 'visible';
+        });
+        const maxH = Math.max(...slides.map(s => s.offsetHeight));
+        slides.forEach(s => {
+          s.style.position = '';
+          s.style.visibility = '';
+        });
+        track.style.height = maxH + 'px';
+      }
+
+      lockHeight();
+      window.addEventListener('resize', lockHeight);
+
+      function goTo(idx) {
+        slides[current].classList.remove('is-active');
+        dots[current].classList.remove('is-active');
+        current = idx;
+        slides[current].classList.add('is-active');
+        dots[current].classList.add('is-active');
+        counter.textContent = (current + 1) + ' / ' + slides.length;
+        prev.disabled = current === 0;
+        next.disabled = current === slides.length - 1;
+      }
+
+      prev.addEventListener('click', () => { if (current > 0) goTo(current - 1); });
+      next.addEventListener('click', () => { if (current < slides.length - 1) goTo(current + 1); });
+      dots.forEach((dot, i) => dot.addEventListener('click', () => goTo(i)));
+
+      goTo(0);
+    })();
+  </script>
+</body>
+</html>

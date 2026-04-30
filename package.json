@@ -1,0 +1,13 @@
+{
+  "name": "zachrobida-site",
+  "version": "1.0.0",
+  "scripts": {
+    "start": "node server.js"
+  },
+  "dependencies": {
+    "express": "^4.18.3"
+  },
+  "engines": {
+    "node": "22.x"
+  }
+}

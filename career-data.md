@@ -1,0 +1,315 @@
+# Career Showcase — Source Data
+
+## Person
+
+- **Name:** Zach Robida
+- **Title:** Design Lead — Supply Chain Software & AI-Driven Solutions
+- **Email:** <robidaz@gmail.com>
+- **Phone:** +1 (678) 524-3186
+- **Location:** Atlanta, GA
+- **LinkedIn:** <https://linkedin.com/in/zach-robida>
+
+## Disclaimer
+
+This website’s content was generated in a local VS Code environment using GitHub Copilot, powered by Anthropic’s Claude Sonnet 4.6 AI model. It draws from materials provided by Zach Robida, including his resume, cover letter, past performance reviews, and other supporting documents. Despite the AI-generated nature of this content, all information in this document has been independently verified for accuracy.
+
+This information was last compiled 4/25/2026 12:11AM GMT
+
+## Education
+
+### B.S. in Mechanical Engineering
+
+- **School:** Clemson University — Clemson, SC
+- **Detail:** 2013 - 2018 | 4 Semesters of Co-Op Experience
+
+### Sustainable Cities of Scandinavia Program
+
+- **School:** Linnaeus University — Kalmar, Sweden
+- **Detail:** Summer 2017 | Selected as commencement speaker out of 300 students
+
+## Professional Summary
+
+Zach Robida is a Design Lead at Manhattan Associates with 8 years of experience delivering high-impact supply chain software solutions for federal government clients. He bridges the gap between functional design and technical implementation — translating complex business requirements into scalable, well-documented solutions on platforms ranging from cloud-native FedRAMP environments to modern Angular-based logistics applications. Zach is an automation-first thinker who actively embeds AI into his workflow, using GitHub Copilot and Glean among other tools to accelerate design documentation, reduce manual overhead, and raise the quality bar for his entire team. Recognized with a Spirit Award for Master Mentor in 2025, he consistently elevates the consultants around him through structured coaching, delegated ownership, and a relentless focus on process improvement.
+
+## Cover Letter
+
+To whom it may concern,
+
+For the past eight years, I have focused on solving complex problems at the intersection of enterprise software, supply chain operations, and evolving technology — consistently identifying where systems break down and designing better ways to make them work.
+
+Within my first year as a consultant at Manhattan Associates, I identified a critical bottleneck in our release process: a growing testing backlog that constrained delivery. I taught myself Python and built a dynamic Selenium-based automation framework, transforming a manual process into a scalable system and significantly improving release throughput. That experience shaped how I approach problems today — not as isolated tasks, but as systems that can be optimized, automated, and continuously improved.
+
+Since then, I have expanded into a Design Lead role, responsible for delivering multi-million-dollar implementations and guiding solution design end-to-end. I work directly with clients to understand their business processes, define requirements, and architect solutions that are both technically sound and operationally practical. Across these engagements, I have consistently introduced automation and, more recently, AI-driven approaches to improve efficiency, reduce manual effort, and enhance decision-making.
+
+My focus today is on applying AI as a practical layer within real systems — not as a standalone capability, but as an integrated component that enhances workflows, accelerates development, and enables smarter operations. I am particularly interested in how AI-driven feedback loops can continuously refine systems over time, creating compounding gains in efficiency and quality.
+
+What differentiates me is not a specific toolset, but a mindset: I question assumptions, identify constraints, make tough decisions, and design solutions that scale. I am comfortable operating across technical implementation, system design, and stakeholder communication.
+
+I am seeking an opportunity where I can apply this approach to help organizations design and implement AI-enabled systems that deliver measurable impact. If that aligns with your company's goals, I greatly welcome the opportunity to connect.
+
+Zach Robida
+
+## Skills
+
+### AI & Automation
+
+- GitHub Copilot (Instructions, Prompting, Agents) | Expert | 90
+- Glean Collections & Memories | Advanced | 85
+- Automated Testing | Expert | 95
+- AI Workflow Integration | Advanced | 85
+
+### Design & UI Systems
+
+- Functional / Extension Design | Expert | 95
+- Figma | Advanced | 85
+- Angular Components | Advanced | 80
+- UI/UX Mockups & Prototyping | Advanced | 85
+
+### Programming & Scripting
+
+- Python | Expert | 95
+- SQL | Advanced | 85
+- HTML / CSS / JavaScript | Intermediate | 65
+- Jinja2 Templating | Intermediate | 65
+
+### Systems & Architecture
+
+- AWS (EC2, S3, SSM, Athena) | Advanced | 80
+- FedRAMP / Security Compliance | Advanced | 80
+- Manhattan Active Supply Chain | Expert | 90
+- Windows Server Administration | Intermediate | 65
+
+### Data & Analysis
+
+- Python Pandas / NumPy | Advanced | 85
+- SQL Query Development | Advanced | 85
+- Excel / Macro Development | Intermediate | 60
+- Amazon Athena / Data Pipelines | Intermediate | 65
+- Postman/ Requests | Advanced | 80
+
+### Tools & Platforms
+
+- WebInspect / Nessus (DAST/SAST) | Advanced | 80
+- Figma | Advanced | 85
+- Git / GitHub | Advanced | 85
+- ServiceNow / ServiceDesk | Intermediate | 60
+- Jira / Confluence | Advanced | 80
+
+## Work History
+
+### Design Lead | Manhattan Associates — PSO Government Division | 2024 – Present
+
+- Lead end-to-end functional design for FEMA's MATM/MASC platform upgrade, authoring the Solution Design Document and orchestrating 120+ slide design overview presentations delivered to FEMA TMD stakeholders.
+- Pioneered the adoption of GitHub Copilot across the team, introducing AI-driven workflows for design documentation, mockup generation, and gap analysis — measurably reducing spec authoring time.
+- Built a centralized, version-controlled documentation repository with Jinja2-based automation tooling that scaffolds new functional specs on demand, enforcing consistent standards across the entire implementation pipeline.
+- Spearheaded the adoption of the Syncfusion Angular UI framework and Figma for the LogX1 application, reducing developer-functional back-and-forth and delivering a higher-quality product within budget.
+- Mentored a rotating cast of consultants through structured design reviews, open-door coaching, and delegated extension spec ownership — earning a Q4 2025 Spirit Award for Master Mentor.
+- Completed over 30 campus recruiting interviews (top 5 company-wide), demonstrating sustained commitment to attracting top talent into the organization.
+
+### Senior Consultant → Design Lead | Manhattan Associates — PSO Government Division | 2021 – 2024
+
+- Served as sole Design Lead for the $1M+ FEMA State Portal project on the LogX1 Angular platform, owning all design documentation, scope management, and client-facing presentations from kick-off through delivery.
+- Led the design of a custom Capacity Finder solution enabling mass bid solicitation and awarding for FEMA transportation equipment and lanes, facilitating in-person stakeholder design sessions to achieve conceptual design sign-off.
+- Took full ownership of the LSCMS monthly release process — revamped Jira dashboards, established bi-weekly defect prioritization cadence, and managed the full CAB compliance trail that withstood FedRAMP audit scrutiny.
+- Served as FEMA client liaison for change requests, Tier 3 support, and the Cloud IPT; traveled bi-monthly to FEMA HQ and provided extended on-site hurricane response support during Hurricane Ian.
+- Designed and delivered the Parcel Carrier API Integration projects (UPS, FedEx, USPS, DHL) as both PM and design lead, achieving SPI of 1.0 on a $90K budget.
+
+### Consultant → Senior Consultant | Manhattan Associates — PSO Government Division | 2018 – 2021
+
+- Designed and developed Manhrobo, a Python-based automated testing framework that replaced 80% of manual consultant testing — reducing a full regression cycle from one week of 6 consultants' work to 30 minutes.
+- Architected a fully autonomous DAST vulnerability detection and reporting pipeline on AWS (WebInspect + Nessus + S3 + Athena + Jira), saving hundreds of hours of manual vulnerability management per year.
+- Contributed to the FedRAMP cloud migration for FEMA's LSCMS solution, pioneering all Windows server hardening procedures, GPO-based DISA STIG alignment, and continuous monitoring SOPs.
+- Built the SCPP-Configurator tool in Python + JDBC to automatically detect configuration discrepancies across environments, eliminating a major source of upgrade-related defects.
+- Developed 23 of 40 extension specification documents during the 2019 upgrade cycle, spanning 6 application components.
+
+### Manufacturing Engineering Co-Op | Itron, Inc. — West Union, SC | 2015 – 2016
+
+- Sole mechanical engineer on a Kaizen team; designed custom ESD workstations while managing a $30,000 budget.
+- Designed and implemented automated test equipment using precision load cells and a Unitronics PLC/HMI, reducing manual process time by up to 50%.
+
+## Project Highlights
+
+### AI-Driven Documentation Repository (Current Effort)
+
+- **Tags:** GitHub Copilot, Claude Sonnet, Glean, Python, Jinja2, AI
+- **Problem:** Functional design documentation was inconsistent, repetitive to scaffold, and disconnected from the development pipeline — creating delays and quality variance across projects.
+- **Solution:** Designed and built a centralized, version-controlled documentation repository with Jinja2-based automation tooling that scaffolds new specs on demand. Custom GitHub Copilot instructions and Claude Sonnet-powered agents are embedded directly in the repo as live context, driving high-quality output at scale. Leveraging Glean via MCP for knowledge management to ensure Claude has a substantial context window of internal documentation, past projects, and design patterns to draw from.
+- **Tech:** Python, Jinja2, GitHub Copilot, Claude Sonnet 4.6, Glean, Markdown, Git
+- **Impact:** Eliminated repetitive document setup, enforced consistent specification standards, and measurably accelerated functional documentation throughput across the implementation team.
+
+### Syncfusion + Figma Design System (LogX1)
+
+- **Tags:** Figma, Syncfusion, Angular, UI/UX, Process Improvement
+- **Problem:** Significant gap between design intent and developer output on the LogX1 Angular application. Developers lacked fidelity mockups; the team had no reusable component library.
+- **Solution:** Independently identified and prototyped the Syncfusion Angular component framework, built a business case with long-term cost analysis, convinced leadership to adopt it, and then integrated components into a Figma library for the team.
+- **Tech:** Figma, Syncfusion Angular, LogX1 application platform
+- **Impact:** Reduced developer/functional back-and-forth on UI issues during build and test phases. Phase 4 design and functional output quality measurably exceeded Phase 3. Became the standard design workflow for the team.
+
+### Digital Proof of Delivery
+
+- **Tags:** Design Lead, Custom, FEMA
+- **Problem:** FEMA has major operational gaps with receiving commodities at state sites, leading to systematic errors — creating operational inefficiencies and compliance risks.
+- **Solution:** Designed a custom digital proof of delivery solution that integrates with the existing LSCMS inventory model, enabling state-level receiving and inventory reconciliation with real-time visibility for FEMA. Presented the design to FEMA as $1.5M project currently pending funding approval.
+- **Tech:** Manhattan Active, LogX1, Angular
+
+### FEMA State Portal
+
+- **Tags:** Design Lead, Angular, Syncfusion, Figma, $1M+ Project
+- **Problem:** FEMA needed extended LSCMS visibility for State Emergency Management Associations, requiring a custom portal with a novel inventory model entirely decoupled from the existing ASN/Order flow.
+- **Solution:** Served as sole Design Lead, authoring the Conceptual Design Document, designing a custom POD inventory snapshot data model, and creating a data access control layer for state-level companies — all on the new Angular/Syncfusion platform.
+- **Tech:** Manhattan SCPP / LogX1, Angular, Syncfusion, Figma, extension spec framework
+- **Impact:** Delivered on time with scope held near-perfectly to original plan. Client POCs expressed satisfaction with solution quality. Laid the foundation for future LogX1 expansion.
+
+### Manhrobo — Automated Testing Framework
+
+- **Tags:** Python, Automation, FedRAMP, AWS
+- **Problem:** Manual regression testing required 6 consultants a full week per cycle. Monthly patching made this schedule untenable.
+- **Solution:** Designed and built Manhrobo, a lightweight portable Python framework purpose-built for supply chain application testing, with randomized input data, auto-generated logs, and cloud-native execution via AWS SSM.
+- **Tech:** Python, AWS SSM, Robot Framework, REST/JDBC integrations, CI execution pipeline
+- **Impact:** Reduced full regression cycle from ~240 consultant-hours to 30 minutes. Eliminated 70+ consultant-hours per monthly patch cycle across 10+ environments. Replaced ~80% of all manual consultant testing.
+
+### FedRAMP Cloud Vulnerability Automation Pipeline
+
+- **Tags:** Python, AWS, Security, FedRAMP, WebInspect
+- **Problem:** All DAST vulnerability scanning, reporting, and Jira ticket creation was fully manual, creating compliance risk and hundreds of hours of analyst overhead per year.
+- **Solution:** Designed a fully autonomous vulnerability detection and reporting framework: parallel WebInspect scans feed auto-exported results to S3, trigger Jira ticket creation, and populate Amazon Athena for POA&M and continuous-monitoring reports.
+- **Tech:** Python, AWS S3 / Athena, WebInspect, Nessus, Jira API, PowerShell
+- **Impact:** Saved hundreds of annual hours on vulnerability management. Provided a compliant, auditable evidence trail that supported FEMA's FedRAMP High authorization.
+
+## Testimonials
+
+Sourced from performance reviews
+
+### Leadership
+
+#### Matt Perry | Senior Engagement Director (quoted in 2018 Review)
+
+He has exhibited a talent I have only seen in two or three new consultants over my time with MA.
+
+### Managers
+
+#### Thomas Adams | Manager, 2025 Year-End Review
+
+Zach ramped up on the MATM solution, helped translate FEMA's SCPP solution into MATM, and established key contacts throughout the company to enhance his skills and progress his projects forward. In the coming year, Zach will be critical in designing FEMA's MASC solution and driving the project to a successful 2027 go-live.
+
+#### Thomas Adams | Manager, 2024 Year-End Review
+
+Zach has had a great first year as a Design Lead — not just leading design phases, but spearheading internal initiatives to help us deliver higher-quality solutions more quickly and efficiently. These efforts were impactful from both a design and development perspective.
+
+#### Thomas Adams | Manager, 2023 Year-End Review
+
+Zach had another great year and is performing well-beyond the role of a Senior Consultant. His FEMA solution knowledge, technical and design skills, and ability to work well within our team makes him an invaluable resource to our department and Manhattan as a whole.
+
+#### Thomas Adams | Manager, 2020 Year-End Review
+
+Zach played a critical role in our COVID response for FEMA. He worked long hours and solved difficult functional problems. His input will be invaluable as we move into 2021 with many new projects and initiatives on the horizon.
+
+#### Michaela McGinty | Manager, 2019 Year-End Review
+
+Zach has continued to grow in many areas of his professional and technical development. He has proven that he can work on some of the most challenging tasks and master them as quickly as anyone. He has continued to show some of the best initiative I've seen at Manhattan.
+
+#### Ellie Kelly | Manager, 2018 Year-End Review
+
+Zach is off to an outstanding start in his career at MA. He has made contributions beyond what is expected of a new consultant — a very quick learner, a hard worker, and able to understand complex systems.
+
+### Spirit Awards & Recognition
+
+#### Manhattan Associates | Q4 2025 Spirit Award — Master Mentor
+
+Zach received the Q4 2025 Spirit Award for Master Mentor — recognized for building durable design instincts across the consulting team through structured coaching, delegated ownership, and an open-door approach to knowledge transfer.
+
+#### Manhattan Associates | 2025 Recruiting Recognition
+
+Completed 18 campus recruiting interviews in Fall 2025 — ranking in the top 5 interviewers company-wide — demonstrating sustained commitment to bringing top talent into the organization.
+
+## Hobbies
+
+- Woodworking
+- DIY Home Projects
+- Carpentry
+- Bathroom Renovations
+- Tiling
+- Electrical Work
+- Reading
+
+## Personality
+
+### Myers-Briggs — ENTJ
+
+Natural leader and strategic thinker. ENTJs excel at organizing people and resources toward long-term goals, communicating with clarity and confidence, and turning ambitious visions into executable plans.
+
+### Color Personality — Red
+
+Driven, results-oriented, and decisive. Reds thrive in fast-paced environments, take ownership instinctively, and bring energy and directness to every challenge they tackle.
+
+### Enneagram — Type 8: The Challenger
+
+Confident, resourceful, and deeply invested in making a positive impact. Type 8s are natural protectors of their team — they advocate fiercely for the people around them and take on difficult problems others avoid.
+
+### Problem Approach
+
+Identifies inefficiencies before being asked, then builds systematic solutions rather than one-off fixes. Driven by a belief that the best way to keep doing interesting work is to make the current work better.
+
+### Learning Style
+
+Learns by doing and by mapping knowledge gaps to the people who have already solved the problem. Comfortable going deep on technical topics outside his formal background — mechanical engineering to Python to AI workflows.
+
+### Leadership
+
+Leads through enablement rather than authority. Prefers to delegate, review, and develop rather than do it himself — because a team of skilled people scales infinitely better than one person who does everything.
+
+### Work Style
+
+Automation-first. Deeply invested in AI as a practical accelerant. Brings structured thinking to ambiguous problems and communicates with a bias toward clarity and brevity.
+
+### Family
+
+#### Wife
+
+Married to Molly McCullough Robida.
+
+#### Pets
+
+Two Cavalier King Charles Spaniels: Nova (6) and Bentley (3).
+
+## Books
+
+### The Singularity Is Near / The Singularity Is Nearer — Ray Kurzweil
+
+Technology compounds. Understanding the trajectory of exponential growth changes how you think about what is coming — and how fast.
+
+### Nexus — Yuval Noah Harari
+
+Information networks have always shaped civilization. AI is the latest — and most powerful — iteration of that pattern.
+
+### Sapiens & Homo Deus — Yuval Noah Harari
+
+Where we came from defines the hidden assumptions we carry into the future. Understanding history is the prerequisite for designing what comes next.
+
+### The Master Algorithm — Pedro Domingos
+
+ML is not magic — it is a search for a unifying learning framework. Demystifying the mechanism makes you a better practitioner.
+
+### Scary Smart — Mo Gawdat
+
+The question is not whether AI becomes capable, but what values we embed in it along the way. Agency matters now, not later.
+
+### Smart Brevity — VandeHei, Allen & Schwartz
+
+Saying more with less is a skill, not a shortcut. Respecting the reader's time is the foundation of effective communication.
+
+### The Five Dysfunctions of a Team — Patrick Lencioni
+
+Trust is the root. Every team dysfunction traces back to an unwillingness to be vulnerable. Fix the root, not the symptoms.
+
+### The First Time Manager — Belker, McCormick & Topchik
+
+Managing people is a craft, not a promotion. The shift from doing to enabling is the hardest and most important transition in a career.
+
+### Freakonomics — Levitt & Dubner
+
+Incentives explain almost everything. Look at the data, question the conventional narrative, and find the hidden lever.
+
+### Conscious — Annaka Harris
+
+Consciousness may be far more fundamental — and far stranger — than our intuitions suggest. Staying humble about what we don't know keeps thinking sharp.
